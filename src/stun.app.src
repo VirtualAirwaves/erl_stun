@@ -5,8 +5,19 @@
   {registered, []},
   {applications, [
                   kernel,
-                  stdlib
+                  stdlib,
+                  lager,
+                  ssl
                  ]},
   {mod, { stun_app, []}},
-  {env, []}
+  {env, [
+    {lager, [
+        {log_root, "./log"},
+        {handlers, [
+            {lager_console_backend, [{level, info}]},
+            {lager_file_backend, [{file, "error.log"}, {level, error}]},
+            {lager_file_backend, [{file, "console.log"}, {level, info}]}
+        ]}
+    ]}
+  ]}
  ]}.

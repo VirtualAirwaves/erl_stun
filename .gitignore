@@ -11,3 +11,5 @@ doc/erlang.png
 doc/edoc-info
 t/*.beam
 examples/*.beam
+_build
+.vscode
